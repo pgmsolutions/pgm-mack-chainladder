@@ -1,0 +1,360 @@
+{
+	"elements": [
+		{
+			"id": "",
+			"type": "label",
+			"data": {
+				"value": "<strong>Best Estimate</strong>",
+				"isr": false,
+				"css": "",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"fontsize": "32",
+				"fontfamily": "default",
+				"fontcolor": "#000000"
+			},
+			"uid": "rpgmgui-14"
+		},
+		{
+			"id": "",
+			"type": "label",
+			"data": {
+				"value": "paste0(\"The estimated ChainLadder amount is: <strong>\" , formatC(round(R, 0), digits = 10L, big.mark = \" \"), \"</strong>.\")",
+				"isr": true,
+				"css": "",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"fontsize": "14",
+				"fontfamily": "default",
+				"fontcolor": "#000000"
+			},
+			"uid": "rpgmgui-15"
+		},
+		{
+			"id": "",
+			"type": "tabs",
+			"data": {
+				"css": "",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"tabsnames": [
+					"Reserve",
+					"Development factors",
+					"Standard deviations"
+				],
+				"tabscurrent": "1"
+			},
+			"elements": [
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "border-radius:4px;",
+						"margintop": "10",
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "light",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "",
+							"type": "grid",
+							"data": {
+								"value": "round(as.matrix(hatC))",
+								"isr": true,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "Developped triangle",
+								"labelposition": "top",
+								"helptext": "",
+								"helpposition": "bottom",
+								"required": false,
+								"onchange": "",
+								"condition": "",
+								"gridtype": "float",
+								"gridcolumns": "",
+								"gridrows": "",
+								"gridnbcolumns": "",
+								"gridnbrows": ""
+							},
+							"uid": "rpgmgui-16"
+						},
+						{
+							"id": "",
+							"type": "columns",
+							"data": {
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"columnswidths": [
+									3,
+									6
+								],
+								"columnspadding": "0"
+							},
+							"elements": [
+								{
+									"id": "",
+									"type": "box",
+									"data": {
+										"css": "",
+										"margintop": 10,
+										"labeltext": "",
+										"labelposition": "hidden",
+										"helptext": "",
+										"helpposition": "bottom",
+										"boxdesign": "none",
+										"boxheader": ""
+									},
+									"elements": [
+										{
+											"id": "",
+											"type": "grid",
+											"data": {
+												"value": "as.matrix(round(Rall, 0))",
+												"isr": true,
+												"css": "",
+												"margintop": "10",
+												"labeltext": "Reserve / year",
+												"labelposition": "top",
+												"helptext": "",
+												"helpposition": "bottom",
+												"required": false,
+												"onchange": "",
+												"condition": "",
+												"gridtype": "float",
+												"gridcolumns": "",
+												"gridrows": "",
+												"gridnbcolumns": "",
+												"gridnbrows": ""
+											},
+											"uid": "rpgmgui-17"
+										},
+										{
+											"id": "buttonexcel",
+											"type": "button",
+											"data": {
+												"value": "Get in Excel ⬇",
+												"isr": false,
+												"css": "",
+												"margintop": "10",
+												"labeltext": "",
+												"labelposition": "left",
+												"helptext": "",
+												"helpposition": "bottom",
+												"onpress": "shell.exec(\"Results.xlsx\")",
+												"buttonsize": "md",
+												"buttondesign": "success"
+											},
+											"uid": "rpgmgui-18"
+										}
+									],
+									"uid": "rpgmgui-19"
+								},
+								{
+									"id": "",
+									"type": "box",
+									"data": {
+										"css": "",
+										"margintop": 10,
+										"labeltext": "",
+										"labelposition": "hidden",
+										"helptext": "",
+										"helpposition": "bottom",
+										"boxdesign": "none",
+										"boxheader": ""
+									},
+									"elements": [
+										{
+											"id": "",
+											"type": "tabs",
+											"data": {
+												"css": "",
+												"margintop": "10",
+												"labeltext": "",
+												"labelposition": "left",
+												"helptext": "",
+												"helpposition": "bottom",
+												"tabsnames": [
+													"Bar Chart",
+													"Horizontal"
+												],
+												"tabscurrent": "1"
+											},
+											"elements": [
+												{
+													"id": "",
+													"type": "graph",
+													"data": {
+														"css": "",
+														"margintop": "10",
+														"labeltext": "",
+														"labelposition": "hidden",
+														"helptext": "",
+														"helpposition": "bottom",
+														"graph": "plotreserve",
+														"graphwidth": "100",
+														"graphheight": "500"
+													},
+													"uid": "rpgmgui-20"
+												},
+												{
+													"id": "",
+													"type": "graph",
+													"data": {
+														"css": "",
+														"margintop": "10",
+														"labeltext": "",
+														"labelposition": "hidden",
+														"helptext": "",
+														"helpposition": "bottom",
+														"graph": "plotreserve2",
+														"graphwidth": "100",
+														"graphheight": "500"
+													},
+													"uid": "rpgmgui-21"
+												}
+											],
+											"uid": "rpgmgui-22"
+										}
+									],
+									"uid": "rpgmgui-23"
+								}
+							],
+							"uid": "rpgmgui-24"
+						}
+					],
+					"uid": "rpgmgui-25"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "border-radius:4px;",
+						"margintop": "10",
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "light",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "",
+							"type": "grid",
+							"data": {
+								"value": "t(round(f, 3))",
+								"isr": true,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "left",
+								"helptext": "",
+								"helpposition": "bottom",
+								"required": false,
+								"onchange": "",
+								"condition": "",
+								"gridtype": "float",
+								"gridcolumns": "",
+								"gridrows": "",
+								"gridnbcolumns": "",
+								"gridnbrows": ""
+							},
+							"uid": "rpgmgui-26"
+						},
+						{
+							"id": "",
+							"type": "graph",
+							"data": {
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "left",
+								"helptext": "",
+								"helpposition": "bottom",
+								"graph": "plotf",
+								"graphwidth": "100",
+								"graphheight": "500"
+							},
+							"uid": "rpgmgui-27"
+						},
+						{
+							"id": "",
+							"type": "graph",
+							"data": {
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "left",
+								"helptext": "",
+								"helpposition": "bottom",
+								"graph": "plotfij",
+								"graphwidth": "100",
+								"graphheight": "500"
+							},
+							"uid": "rpgmgui-28"
+						}
+					],
+					"uid": "rpgmgui-29"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "border-radius:4px;",
+						"margintop": "10",
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "light",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "",
+							"type": "grid",
+							"data": {
+								"value": "t(round(s, 3))",
+								"isr": true,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "left",
+								"helptext": "",
+								"helpposition": "bottom",
+								"required": false,
+								"onchange": "",
+								"condition": "",
+								"gridtype": "float",
+								"gridcolumns": "",
+								"gridrows": "",
+								"gridnbcolumns": "",
+								"gridnbrows": ""
+							},
+							"uid": "rpgmgui-30"
+						}
+					],
+					"uid": "rpgmgui-31"
+				}
+			],
+			"uid": "rpgmgui-33"
+		}
+	]
+}

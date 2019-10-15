@@ -1,0 +1,328 @@
+{
+	"elements": [
+		{
+			"id": "",
+			"type": "label",
+			"data": {
+				"value": "<strong>Solvency Capital Requirement</strong>",
+				"isr": false,
+				"css": "",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"fontsize": "32",
+				"fontfamily": "default",
+				"fontcolor": "#000000"
+			},
+			"uid": "rpgmgui-0"
+		},
+		{
+			"id": "",
+			"type": "tabs",
+			"data": {
+				"css": "",
+				"margintop": "20",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"tabsnames": [
+					"Mack",
+					"Bootstrap"
+				],
+				"tabscurrent": "1"
+			},
+			"elements": [
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "border-radius:4px;",
+						"margintop": "10",
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "light",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "",
+							"type": "label",
+							"data": {
+								"value": "paste0(\"Best estimate : <strong>\", formatC(round(R, 0), digits = 10L, big.mark = \" \"), \"</strong>\\nStandard Deviation: <strong>\", round(100*sqrt(eqm)/R, 1), \"</strong>%\")",
+								"isr": true,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"fontsize": "14",
+								"fontfamily": "default",
+								"fontcolor": "#000000"
+							},
+							"uid": "rpgmgui-1"
+						},
+						{
+							"id": "distr",
+							"type": "select",
+							"data": {
+								"subtype": "select",
+								"value": "",
+								"isr": false,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "Choose distribution",
+								"labelposition": "left",
+								"helptext": "",
+								"helpposition": "bottom",
+								"required": false,
+								"onchange": "gui.update(\"this\", \"labelquantile\")",
+								"condition": "",
+								"choices": [
+									{
+										"value": "norm",
+										"text": "Normal"
+									},
+									{
+										"value": "lnorm",
+										"text": "Log normal"
+									},
+									{
+										"value": "gamma",
+										"text": "Gamma"
+									}
+								],
+								"choicesvalues": "",
+								"choicestexts": ""
+							},
+							"uid": "rpgmgui-2"
+						},
+						{
+							"id": "labelquantile",
+							"type": "label",
+							"data": {
+								"value": "paste0(\"The quantile at 99.5% is: <strong style = \\\"color:#c0392b;\\\">\", formatC(round(quantileR(), 0), digits = 10L, big.mark = \" \"), \"</strong>.\")",
+								"isr": true,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"fontsize": "14",
+								"fontfamily": "default",
+								"fontcolor": "#000000"
+							},
+							"uid": "rpgmgui-3"
+						},
+						{
+							"id": "",
+							"type": "graph",
+							"data": {
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"graph": "plodistribution",
+								"graphwidth": "100",
+								"graphheight": "500"
+							},
+							"uid": "rpgmgui-4"
+						}
+					],
+					"uid": "rpgmgui-5"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "border-radius:4px;",
+						"margintop": "10",
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "light",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "",
+							"type": "columns",
+							"data": {
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"columnswidths": [
+									3,
+									3,
+									4
+								],
+								"columnspadding": 10
+							},
+							"elements": [
+								{
+									"id": "",
+									"type": "box",
+									"data": {
+										"css": "",
+										"margintop": 10,
+										"labeltext": "",
+										"labelposition": "hidden",
+										"helptext": "",
+										"helpposition": "bottom",
+										"boxdesign": "none",
+										"boxheader": ""
+									},
+									"elements": [
+										{
+											"id": "N_boostrap",
+											"type": "number",
+											"data": {
+												"subtype": "integer",
+												"value": "2000",
+												"isr": false,
+												"css": "",
+												"margintop": "10",
+												"labeltext": "Number of Simulations",
+												"labelposition": "top",
+												"helptext": "",
+												"helpposition": "bottom",
+												"required": false,
+												"onchange": "",
+												"condition": "",
+												"min": "1",
+												"max": "",
+												"step": "500"
+											},
+											"uid": "rpgmgui-6"
+										}
+									],
+									"uid": "rpgmgui-7"
+								},
+								{
+									"id": "",
+									"type": "box",
+									"data": {
+										"css": "",
+										"margintop": 10,
+										"labeltext": "",
+										"labelposition": "hidden",
+										"helptext": "",
+										"helpposition": "bottom",
+										"boxdesign": "none",
+										"boxheader": ""
+									},
+									"elements": [
+										{
+											"id": "bootbutton",
+											"type": "button",
+											"data": {
+												"value": "Simulate",
+												"isr": false,
+												"css": "",
+												"margintop": "25",
+												"labeltext": "",
+												"labelposition": "left",
+												"helptext": "",
+												"helpposition": "bottom",
+												"onpress": "R_boot <- bootstrap(N_boostrap);gui.show(\"this\", \"graphboot\")",
+												"buttonsize": "md",
+												"buttondesign": "primary"
+											},
+											"uid": "rpgmgui-8"
+										}
+									],
+									"uid": "rpgmgui-9"
+								},
+								{
+									"id": "",
+									"type": "box",
+									"data": {
+										"css": "",
+										"margintop": 10,
+										"labeltext": "",
+										"labelposition": "hidden",
+										"helptext": "",
+										"helpposition": "bottom",
+										"boxdesign": "none",
+										"boxheader": ""
+									},
+									"elements": [
+										{
+											"id": "bootprogress",
+											"type": "progress",
+											"data": {
+												"subtype": "progressbar",
+												"value": "50",
+												"isr": false,
+												"css": "",
+												"margintop": "10",
+												"labeltext": "Computation progress",
+												"labelposition": "top",
+												"helptext": "",
+												"helpposition": "bottom",
+												"progresscolor": "#0080ff",
+												"progressdescription": "%"
+											},
+											"uid": "rpgmgui-10"
+										}
+									],
+									"uid": "rpgmgui-11"
+								}
+							],
+							"uid": "rpgmgui-12"
+						},
+						{
+							"id": "labelboot",
+							"type": "label",
+							"data": {
+								"value": "",
+								"isr": false,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"fontsize": "14",
+								"fontfamily": "default",
+								"fontcolor": "#000000"
+							},
+							"uid": "rpgmgui-13"
+						},
+						{
+							"id": "graphboot",
+							"type": "graph",
+							"data": {
+								"css": "",
+								"margintop": "10",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"graph": "",
+								"graphwidth": "100",
+								"graphheight": "500"
+							},
+							"uid": "rpgmgui-14"
+						}
+					],
+					"uid": "rpgmgui-15"
+				}
+			],
+			"uid": "rpgmgui-16"
+		}
+	],
+	"submitbutton": true
+}

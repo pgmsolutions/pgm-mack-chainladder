@@ -1,0 +1,290 @@
+{
+	"elements": [
+		{
+			"id": "",
+			"type": "label",
+			"data": {
+				"value": "<strong>Import Stage</strong>",
+				"isr": false,
+				"css": "",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"fontsize": "32",
+				"fontfamily": "default",
+				"fontcolor": "#000040"
+			},
+			"uid": "rpgmgui-150"
+		},
+		{
+			"id": "datapath",
+			"type": "path",
+			"data": {
+				"subtype": "file",
+				"value": "donnees/MACK.txt",
+				"isr": false,
+				"css": "",
+				"margintop": "10",
+				"labeltext": "Data Files",
+				"labelposition": "left",
+				"helptext": "The text file with the data of the Triangle",
+				"helpposition": "bottom",
+				"required": false,
+				"onchange": "",
+				"condition": ""
+			},
+			"uid": "rpgmgui-151"
+		},
+		{
+			"id": "ImportCol",
+			"type": "columns",
+			"data": {
+				"css": "",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"columnswidths": [
+					2,
+					2,
+					2,
+					3
+				],
+				"columnspadding": "10"
+			},
+			"elements": [
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "",
+						"margintop": 10,
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "none",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "header",
+							"type": "select",
+							"data": {
+								"subtype": "select",
+								"value": "FALSE",
+								"isr": false,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "Header",
+								"labelposition": "top",
+								"helptext": "Is the first line in data a header ?",
+								"helpposition": "label",
+								"required": false,
+								"onchange": "",
+								"condition": "",
+								"choices": [
+									{
+										"value": "TRUE",
+										"text": "Yes"
+									},
+									{
+										"value": "FALSE",
+										"text": "No"
+									}
+								],
+								"choicesvalues": "",
+								"choicestexts": ""
+							},
+							"uid": "rpgmgui-152"
+						}
+					],
+					"uid": "rpgmgui-153"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "",
+						"margintop": 10,
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "none",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "sep",
+							"type": "select",
+							"data": {
+								"subtype": "select",
+								"value": "",
+								"isr": false,
+								"css": "",
+								"margintop": "10",
+								"labeltext": "Data sep",
+								"labelposition": "top",
+								"helptext": "What is the data separator ?",
+								"helpposition": "label",
+								"required": false,
+								"onchange": "",
+								"condition": "",
+								"choices": [
+									{
+										"value": ",",
+										"text": ","
+									},
+									{
+										"value": ";",
+										"text": ";"
+									},
+									{
+										"value": "\\t",
+										"text": "Tab"
+									}
+								],
+								"choicesvalues": "",
+								"choicestexts": ""
+							},
+							"uid": "rpgmgui-154"
+						}
+					],
+					"uid": "rpgmgui-155"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "",
+						"margintop": 10,
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "none",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "buttonShowFile",
+							"type": "button",
+							"data": {
+								"value": "Show File",
+								"isr": false,
+								"css": "",
+								"margintop": "25",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"onpress": "toggleFile()",
+								"buttonsize": "md",
+								"buttondesign": "secondary"
+							},
+							"uid": "rpgmgui-156"
+						}
+					],
+					"uid": "rpgmgui-157"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "",
+						"margintop": 10,
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "none",
+						"boxheader": ""
+					},
+					"elements": [
+						{
+							"id": "buttonImportFile",
+							"type": "button",
+							"data": {
+								"value": "Import File",
+								"isr": false,
+								"css": "",
+								"margintop": "25",
+								"labeltext": "",
+								"labelposition": "hidden",
+								"helptext": "",
+								"helpposition": "bottom",
+								"onpress": "importData()",
+								"buttonsize": "md",
+								"buttondesign": "warning"
+							},
+							"uid": "rpgmgui-158"
+						}
+					],
+					"uid": "rpgmgui-159"
+				},
+				{
+					"id": "",
+					"type": "box",
+					"data": {
+						"css": "",
+						"margintop": 10,
+						"labeltext": "",
+						"labelposition": "hidden",
+						"helptext": "",
+						"helpposition": "bottom",
+						"boxdesign": "none",
+						"boxheader": ""
+					},
+					"elements": [],
+					"uid": "rpgmgui-160"
+				}
+			],
+			"uid": "rpgmgui-161"
+		},
+		{
+			"id": "textShowFile",
+			"type": "label",
+			"data": {
+				"value": "try(readChar(datapath, 10000), silent = TRUE)",
+				"isr": true,
+				"css": "border:solid 1px; border-color:lightgrey; border-radius:4px; padding:10px;",
+				"margintop": "10",
+				"labeltext": "",
+				"labelposition": "left",
+				"helptext": "",
+				"helpposition": "bottom",
+				"fontsize": "12",
+				"fontfamily": "default",
+				"fontcolor": "#000000"
+			},
+			"uid": "rpgmgui-162"
+		},
+		{
+			"id": "data",
+			"type": "grid",
+			"data": {
+				"value": "as.matrix(C)",
+				"isr": true,
+				"css": "",
+				"margintop": "10",
+				"labeltext": "<span style=\"font-size:12px;\">Imported Data (read only)</span>",
+				"labelposition": "topaligned",
+				"helptext": "Please check that the importation looks right",
+				"helpposition": "bottom",
+				"required": false,
+				"onchange": "",
+				"condition": "",
+				"gridtype": "float",
+				"gridcolumns": "",
+				"gridrows": "",
+				"gridnbcolumns": "",
+				"gridnbrows": ""
+			},
+			"uid": "rpgmgui-163"
+		}
+	]
+}

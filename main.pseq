@@ -1,0 +1,125 @@
+{
+	"steps": [
+		{
+			"id": "start",
+			"name": "Start",
+			"type": "start",
+			"x": 120,
+			"y": 40,
+			"uuid": 1,
+			"target": 4
+		},
+		{
+			"uuid": 2,
+			"file": "Import.pgui",
+			"id": "Import",
+			"name": "Import",
+			"type": "gui",
+			"x": 120,
+			"y": 250,
+			"target": 6
+		},
+		{
+			"x": 660,
+			"y": 280,
+			"uuid": 3,
+			"file": "",
+			"id": "",
+			"name": "",
+			"target": "",
+			"type": "end"
+		},
+		{
+			"uuid": 4,
+			"file": "Pre-import.R",
+			"id": "Pre-import.R",
+			"name": "",
+			"type": "rscript",
+			"x": 120,
+			"y": 130,
+			"target": 2
+		},
+		{
+			"uuid": 5,
+			"file": "mack.R",
+			"id": "mack.R",
+			"name": "",
+			"type": "rscript",
+			"x": 120,
+			"y": 590,
+			"target": 12
+		},
+		{
+			"x": 120,
+			"y": 360,
+			"uuid": 6,
+			"file": "",
+			"id": "",
+			"name": "",
+			"type": "condition",
+			"r": "n <- ncol(C); `if`(is.null(n), FALSE,  n > 1L)",
+			"target": 13,
+			"falsetarget": 8
+		},
+		{
+			"uuid": 8,
+			"file": "Error-import.R",
+			"id": "Error-import.R",
+			"name": "",
+			"type": "rscript",
+			"x": 290,
+			"y": 250,
+			"target": 2
+		},
+		{
+			"uuid": 9,
+			"file": "results.pgui",
+			"id": "results",
+			"name": "Results",
+			"type": "gui",
+			"x": 320,
+			"y": 690,
+			"target": 11
+		},
+		{
+			"uuid": 10,
+			"file": "risk.pgui",
+			"id": "risk",
+			"name": "Final Analysis",
+			"type": "gui",
+			"x": 660,
+			"y": 160,
+			"target": 3
+		},
+		{
+			"uuid": 11,
+			"file": "bootstrap.R",
+			"id": "bootstrap.R",
+			"name": "",
+			"type": "rscript",
+			"x": 660,
+			"y": 60,
+			"target": 10
+		},
+		{
+			"uuid": 12,
+			"file": "Excel/ExcelGenerator.R",
+			"id": "excel.R",
+			"name": "",
+			"type": "rscript",
+			"x": 120,
+			"y": 690,
+			"target": 9
+		},
+		{
+			"uuid": 13,
+			"file": "interpCol.r",
+			"id": "interpCol",
+			"name": "",
+			"type": "rscript",
+			"x": 120,
+			"y": 500,
+			"target": 5
+		}
+	]
+}
