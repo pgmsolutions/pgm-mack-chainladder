@@ -157,7 +157,7 @@
 												"labelposition": "left",
 												"helptext": "",
 												"helpposition": "bottom",
-												"onpress": "shell.exec(\"Results.xlsx\")",
+												"onpress": "rpgm.open(\"Results.xlsx\")",
 												"buttonsize": "md",
 												"buttondesign": "success"
 											},
@@ -354,7 +354,8 @@
 					"uid": "rpgmgui-31"
 				}
 			],
-			"uid": "rpgmgui-33"
+			"uid": "rpgmgui-32"
 		}
-	]
+	],
+	"submitbutton": true
 }

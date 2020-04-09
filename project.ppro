@@ -9,6 +9,18 @@
 	"rconsole": "r",
 	"history": [
 		{
+			"date": "09/04/2020",
+			"version": "1.1.2",
+			"author": "Nicolas",
+			"changelog": "Use now rpgm.open"
+		},
+		{
+			"date": "09/01/2020",
+			"version": "1.1.1",
+			"author": "Nicolas",
+			"changelog": "Standalone"
+		},
+		{
 			"date": "15/10/2019",
 			"version": "1.1",
 			"author": "Nicolas",
